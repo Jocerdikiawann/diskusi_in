@@ -31,6 +31,7 @@ class CTextField extends StatelessWidget {
         validator: validator,
         keyboardType: keyboardType,
         enableSuggestions: !obscureText,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         decoration: InputDecoration(
           icon: icon,
           label: Text(label ?? ""),
@@ -38,8 +39,8 @@ class CTextField extends StatelessWidget {
           floatingLabelBehavior: FloatingLabelBehavior.always,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(6),
-            ),
-             ),
+          ),
+        ),
       ),
     );
   }

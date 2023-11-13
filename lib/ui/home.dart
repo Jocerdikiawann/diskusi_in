@@ -1,84 +1,57 @@
-import 'package:diskusi_in/ui/component/button.dart';
+import 'package:diskusi_in/ui/call.dart';
+import 'package:diskusi_in/ui/chat.dart';
+import 'package:diskusi_in/ui/component/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class HomeScaffold extends StatelessWidget {
+  HomeScaffold({
+    Key? key,
+    required this.navigationShell,
+  }) : super(key: key ?? const ValueKey("ScaffoldWithNestedNavigation"));
 
-  @override
-  State<Home> createState() => _HomeState();
-}
+  final StatefulNavigationShell navigationShell;
 
-class _HomeState extends State<Home> {
-  @override
-  void dispose() {
-    super.dispose();
+  final PageController _pageController = PageController();
+
+  void _goBranch(int index) {
+    _pageController.jumpToPage(index);
+    navigationShell.goBranch(
+      index,
+      initialLocation: index == navigationShell.currentIndex,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(
-          "Hi, Welcome 👋",
-          style: Theme.of(context).appBarTheme.titleTextStyle,
+        leading: SvgPicture.asset(
+          "assets/images/ic_empty_search.svg",
         ),
-      ),
-      //I want wrap content in bottom navigation bar
-      bottomNavigationBar: SafeArea(
-        child: BottomAppBar(
-          elevation: 0,
-          height:
-              MediaQuery.of(context).size.height * 0.2, // Height Warp Content
-          child: Column(
-            children: [
-              CButton(
-                isFilled: true,
-                onPressed: () => context.goNamed("signUp"),
-                text: "Get Started",
-              ),
-              const Padding(padding: EdgeInsets.symmetric(vertical: 8)),
-              CButton(
-                isFilled: false,
-                onPressed: () => context.goNamed("signIn"),
-                text: "Sign In",
-              ),
-            ],
+        actions: [
+          IconButton(
+            onPressed: () => context.infoSnackbar("Hello"),
+            icon: const Icon(Icons.settings_suggest_rounded),
           ),
-        ),
+        ],
       ),
-      body: Center(
-        child: Column(
-          children: [
-            const Padding(padding: EdgeInsets.symmetric(vertical: 25)),
-            SvgPicture.asset(
-              "assets/images/ic_hangout.svg",
-              semanticsLabel: "Hangout",
-              width: MediaQuery.of(context).size.width * 0.6,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 0.8, top: 25),
-              child: Column(
-                children: [
-                  Text(
-                    "Discuss with\nyour friends here!",
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                    textAlign: TextAlign.center,
-                  ),
-                  Text(
-                    "Register now and start discussions with your friends!",
-                    style: Theme.of(context).textTheme.bodySmall!,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+      body: PageView(
+        controller: _pageController,
+        onPageChanged: (value) => _goBranch(value),
+        children: const [
+          Chat(),
+          Call(),
+        ],
+      ),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: navigationShell.currentIndex,
+        onDestinationSelected: _goBranch,
+        destinations: const [
+          NavigationDestination(icon: Icon(Icons.chat), label: "Chat"),
+          NavigationDestination(icon: Icon(Icons.call), label: "Call"),
+        ],
       ),
     );
   }

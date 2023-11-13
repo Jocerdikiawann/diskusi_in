@@ -1,16 +1,25 @@
-import 'package:go_router/go_router.dart';
+import 'package:diskusi_in/ui/call.dart';
+import 'package:diskusi_in/ui/chat.dart';
 import 'package:diskusi_in/ui/home.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:diskusi_in/ui/on_board.dart';
 import 'package:diskusi_in/ui/sign_in.dart';
 import 'package:diskusi_in/ui/sign_up.dart';
 
+final _rootNavigator = GlobalKey<NavigatorState>();
+final _shellNavigatorChat = GlobalKey<NavigatorState>();
+final _shellNavigatorCall = GlobalKey<NavigatorState>();
+
 final GoRouter router = GoRouter(
-  initialLocation: "/",
+  initialLocation: "/onBoard/signUp",
   debugLogDiagnostics: true,
+  navigatorKey: _rootNavigator,
   routes: [
     GoRoute(
       path: "/",
-      name: "home",
-      builder: (context, state) => const Home(),
+      name: "onBoard",
+      builder: (context, state) => const OnBoard(),
       routes: [
         GoRoute(
           path: "signIn",
@@ -24,5 +33,35 @@ final GoRouter router = GoRouter(
         ),
       ],
     ),
+    StatefulShellRoute.indexedStack(
+        builder: (context, state, navigationShell) => HomeScaffold(
+              navigationShell: navigationShell,
+            ),
+        branches: [
+          StatefulShellBranch(
+            navigatorKey: _shellNavigatorChat,
+            routes: [
+              GoRoute(
+                path: "/chat",
+                name: "chat",
+                pageBuilder: (context, state) => const MaterialPage(
+                  child: Chat(),
+                ),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            navigatorKey: _shellNavigatorCall,
+            routes: [
+              GoRoute(
+                path: "/call",
+                name: "call",
+                pageBuilder: (context, state) => const MaterialPage(
+                  child: Call(),
+                ),
+              ),
+            ],
+          )
+        ])
   ],
 );

@@ -1,7 +1,9 @@
-import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:diskusi_in/model/user/user_model.dart';
 import 'package:diskusi_in/repository/user_repository.dart';
 import 'package:diskusi_in/utils/error_type.dart';
+import 'package:diskusi_in/utils/field_validations.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'authentication_event.dart';
@@ -10,10 +12,9 @@ part 'authentication_bloc.freezed.dart';
 
 class AuthenticationBloc
     extends Bloc<AuthenticationEvent, AuthenticationState> {
-  AuthenticationBloc({required this.userRepository}) : super(const _Initial()) {
-    on<_SignIn>(_signIn);
-
-    on<_SignUp>(_signUp);
+  AuthenticationBloc({required this.userRepository}) : super(const Initial()) {
+    on<_SignIn>(_signIn, transformer: droppable());
+    on<_SignUp>(_signUp, transformer: droppable());
   }
 
   final UserRepository userRepository;

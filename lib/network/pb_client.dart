@@ -36,8 +36,11 @@ class PbClient {
       }
 
       return ResultNetwork.success(UserModel.fromRecord(userData.record!));
-    } on ClientException catch (_) {
-      return const ResultNetwork.failed(ErrorType.internal, "Error");
+    } on ClientException catch (error) {
+      return ResultNetwork.failed(
+        ErrorType.internal,
+        "ERROR: ${error.errorMessage}",
+      );
     }
   }
 }

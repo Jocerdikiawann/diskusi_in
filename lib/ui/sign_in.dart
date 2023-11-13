@@ -1,7 +1,9 @@
 import 'package:diskusi_in/bloc/authentication_bloc.dart';
+import 'package:diskusi_in/model/user/user_model.dart';
 import 'package:diskusi_in/ui/component/button.dart';
 import 'package:diskusi_in/ui/component/snackbar.dart';
 import 'package:diskusi_in/ui/component/text_field.dart';
+import 'package:diskusi_in/utils/field_validations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -16,31 +18,41 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   late String _email = "", _password = "";
+  late bool loading = false;
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: AppBar(
-        title: Text(
-          "Sign in",
-          style: Theme.of(context).appBarTheme.titleTextStyle,
-        ),
-        leading: IconButton(
-          onPressed: () => context.pop(),
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Theme.of(context).colorScheme.primary,
+    return BlocListener<AuthenticationBloc, AuthenticationState>(
+      listener: (context, state) {
+        state.when(
+          initial: () => {},
+          fieldChanged: (_) => {},
+          loading: () => loading = true,
+          failed: (String message) => context.errorSnackbar(message),
+          success: (UserModel data) => context.goNamed("chat"),
+        );
+      },
+      child: Scaffold(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        appBar: AppBar(
+          title: Text(
+            "Sign in",
+            style: Theme.of(context).appBarTheme.titleTextStyle,
+          ),
+          leading: IconButton(
+            onPressed: () => context.pop(),
+            icon: Icon(
+              Icons.arrow_back_ios,
+              color: Theme.of(context).colorScheme.primary,
+            ),
           ),
         ),
-      ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+        body: SafeArea(
           child: Form(
             key: _formKey,
             child: ListView(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               children: [
                 const Padding(padding: EdgeInsets.symmetric(vertical: 10)),
                 SvgPicture.asset(
@@ -63,37 +75,41 @@ class _SignInState extends State<SignIn> {
                   hint: "yourmail@mail.com",
                   label: "Email",
                   keyboardType: TextInputType.emailAddress,
-                  validator: (p0) =>
-                      p0!.isEmpty ? "Email cannot be empty" : null,
+                  validator: (value) => value?.validateEmail,
                 ),
                 CTextField(
                   onChanged: (value) => _password = value,
                   obscureText: true,
                   hint: "********",
                   label: "Password",
-                  validator: (p0) =>
-                      p0!.isEmpty ? "Password cannot be empty" : null,
+                  validator: (p0) => p0?.validateRequired,
                 ),
                 const Padding(padding: EdgeInsets.symmetric(vertical: 2)),
-                CButton(
-                  isFilled: true,
-                  onPressed: () => !_formKey.currentState!.validate()
-                      ? context.errorSnackbar("ERROR: All field must be filled")
-                      : context.read<AuthenticationBloc>().add(
-                            AuthenticationEvent.signIn(_email, _password),
-                          ),
-                  text: "Sign In",
-                ),
+                loading
+                    ? const CircularProgressIndicator()
+                    : CButton(
+                        isFilled: true,
+                        onPressed: () => !_formKey.currentState!.validate()
+                            ? context.errorSnackbar(
+                                "ERROR: All field must be filled")
+                            : context.read<AuthenticationBloc>().add(
+                                  AuthenticationEvent.signIn(_email, _password),
+                                ),
+                        text: "Sign In",
+                      ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
-                    const Text("Don't have an account?"),
-                    TextButton(
-                      onPressed: () => context.goNamed("signUp"),
-                      child: const Text("Sign up here"),
+                    const Flexible(child: Text("Don't have an account?")),
+                    Flexible(
+                      child: TextButton(
+                        onPressed: () => context.goNamed("signUp"),
+                        child: const Text("Sign up here"),
+                      ),
                     ),
                   ],
-                ),
+                )
               ],
             ),
           ),

@@ -1,10 +1,13 @@
 import 'package:diskusi_in/bloc/authentication_bloc.dart';
+import 'package:diskusi_in/model/user/user_model.dart';
 import 'package:diskusi_in/network/pb_client.dart';
 import 'package:diskusi_in/repository/user_repository.dart';
 import 'package:diskusi_in/router.dart';
+import 'package:diskusi_in/ui/component/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,6 +43,7 @@ class _MyAppState extends State<MyApp> {
           ),
           fontFamily: "Nunito",
         ),
+        scaffoldMessengerKey: snackbarkey,
         debugShowCheckedModeBanner: true,
         routeInformationParser: router.routeInformationParser,
         routerDelegate: router.routerDelegate,
