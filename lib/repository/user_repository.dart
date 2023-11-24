@@ -15,6 +15,7 @@ class UserRepository {
       String password, String passwordConfirm) async {
     return client.signUp(
       UserSignUpModel(
+        fileName: "",
         passwordConfirm: passwordConfirm,
         fullName: fullName,
         email: email,

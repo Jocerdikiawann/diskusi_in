@@ -11,6 +11,7 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       fullName: json['fullName'] as String,
       email: json['email'] as String,
+      avatar: json['avatar'] as String,
     );
 
 Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
@@ -18,6 +19,7 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
       'id': instance.id,
       'fullName': instance.fullName,
       'email': instance.email,
+      'avatar': instance.avatar,
     };
 
 _$UserSignInModelImpl _$$UserSignInModelImplFromJson(
@@ -42,6 +44,7 @@ _$UserSignUpModelImpl _$$UserSignUpModelImplFromJson(
       emailVisibility: json['emailVisibility'] as bool? ?? true,
       password: json['password'] as String,
       passwordConfirm: json['passwordConfirm'] as String,
+      fileName: json['fileName'] as String,
       required: json['required'],
     );
 
@@ -53,5 +56,6 @@ Map<String, dynamic> _$$UserSignUpModelImplToJson(
       'emailVisibility': instance.emailVisibility,
       'password': instance.password,
       'passwordConfirm': instance.passwordConfirm,
+      'fileName': instance.fileName,
       'required': instance.required,
     };

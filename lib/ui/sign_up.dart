@@ -30,8 +30,7 @@ class _SignUpState extends State<SignUp> {
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listener: (context, state) {
         state.when(
-          initial: () => {},
-          fieldChanged: (_) => {},
+          initial: () {},
           loading: () => loading = true,
           failed: (String message) => context.errorSnackbar(message),
           success: (UserModel _) => {
@@ -108,7 +107,7 @@ class _SignUpState extends State<SignUp> {
               loading
                   ? const CircularProgressIndicator()
                   : CButton(
-                      onPressed: () => !_formKey.currentState!.validate()
+                      onPressed: () async => !_formKey.currentState!.validate()
                           ? context.errorSnackbar("ERROR: validation field")
                           : context.read<AuthenticationBloc>().add(
                                 AuthenticationEvent.signUp(

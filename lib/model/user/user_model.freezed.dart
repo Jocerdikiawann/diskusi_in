@@ -23,6 +23,7 @@ mixin _$UserModel {
   String get id => throw _privateConstructorUsedError;
   String get fullName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String get avatar => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,7 @@ abstract class $UserModelCopyWith<$Res> {
   factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) then) =
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
-  $Res call({String id, String fullName, String email});
+  $Res call({String id, String fullName, String email, String avatar});
 }
 
 /// @nodoc
@@ -54,6 +55,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? id = null,
     Object? fullName = null,
     Object? email = null,
+    Object? avatar = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -68,6 +70,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      avatar: null == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -80,7 +86,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
       __$$UserModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String fullName, String email});
+  $Res call({String id, String fullName, String email, String avatar});
 }
 
 /// @nodoc
@@ -97,6 +103,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? fullName = null,
     Object? email = null,
+    Object? avatar = null,
   }) {
     return _then(_$UserModelImpl(
       id: null == id
@@ -111,6 +118,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      avatar: null == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -119,7 +130,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserModelImpl implements _UserModel {
   const _$UserModelImpl(
-      {required this.id, required this.fullName, required this.email});
+      {required this.id,
+      required this.fullName,
+      required this.email,
+      required this.avatar});
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
@@ -130,10 +144,12 @@ class _$UserModelImpl implements _UserModel {
   final String fullName;
   @override
   final String email;
+  @override
+  final String avatar;
 
   @override
   String toString() {
-    return 'UserModel(id: $id, fullName: $fullName, email: $email)';
+    return 'UserModel(id: $id, fullName: $fullName, email: $email, avatar: $avatar)';
   }
 
   @override
@@ -144,12 +160,13 @@ class _$UserModelImpl implements _UserModel {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.fullName, fullName) ||
                 other.fullName == fullName) &&
-            (identical(other.email, email) || other.email == email));
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.avatar, avatar) || other.avatar == avatar));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, fullName, email);
+  int get hashCode => Object.hash(runtimeType, id, fullName, email, avatar);
 
   @JsonKey(ignore: true)
   @override
@@ -169,7 +186,8 @@ abstract class _UserModel implements UserModel {
   const factory _UserModel(
       {required final String id,
       required final String fullName,
-      required final String email}) = _$UserModelImpl;
+      required final String email,
+      required final String avatar}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
@@ -180,6 +198,8 @@ abstract class _UserModel implements UserModel {
   String get fullName;
   @override
   String get email;
+  @override
+  String get avatar;
   @override
   @JsonKey(ignore: true)
   _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>
@@ -353,6 +373,7 @@ mixin _$UserSignUpModel {
   bool get emailVisibility => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
   String get passwordConfirm => throw _privateConstructorUsedError;
+  String get fileName => throw _privateConstructorUsedError;
   dynamic get required => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -373,6 +394,7 @@ abstract class $UserSignUpModelCopyWith<$Res> {
       bool emailVisibility,
       String password,
       String passwordConfirm,
+      String fileName,
       dynamic required});
 }
 
@@ -394,6 +416,7 @@ class _$UserSignUpModelCopyWithImpl<$Res, $Val extends UserSignUpModel>
     Object? emailVisibility = null,
     Object? password = null,
     Object? passwordConfirm = null,
+    Object? fileName = null,
     Object? required = freezed,
   }) {
     return _then(_value.copyWith(
@@ -417,6 +440,10 @@ class _$UserSignUpModelCopyWithImpl<$Res, $Val extends UserSignUpModel>
           ? _value.passwordConfirm
           : passwordConfirm // ignore: cast_nullable_to_non_nullable
               as String,
+      fileName: null == fileName
+          ? _value.fileName
+          : fileName // ignore: cast_nullable_to_non_nullable
+              as String,
       required: freezed == required
           ? _value.required
           : required // ignore: cast_nullable_to_non_nullable
@@ -439,6 +466,7 @@ abstract class _$$UserSignUpModelImplCopyWith<$Res>
       bool emailVisibility,
       String password,
       String passwordConfirm,
+      String fileName,
       dynamic required});
 }
 
@@ -458,6 +486,7 @@ class __$$UserSignUpModelImplCopyWithImpl<$Res>
     Object? emailVisibility = null,
     Object? password = null,
     Object? passwordConfirm = null,
+    Object? fileName = null,
     Object? required = freezed,
   }) {
     return _then(_$UserSignUpModelImpl(
@@ -481,6 +510,10 @@ class __$$UserSignUpModelImplCopyWithImpl<$Res>
           ? _value.passwordConfirm
           : passwordConfirm // ignore: cast_nullable_to_non_nullable
               as String,
+      fileName: null == fileName
+          ? _value.fileName
+          : fileName // ignore: cast_nullable_to_non_nullable
+              as String,
       required: freezed == required ? _value.required! : required,
     ));
   }
@@ -495,6 +528,7 @@ class _$UserSignUpModelImpl implements _UserSignUpModel {
       this.emailVisibility = true,
       required this.password,
       required this.passwordConfirm,
+      required this.fileName,
       this.required});
 
   factory _$UserSignUpModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -512,11 +546,13 @@ class _$UserSignUpModelImpl implements _UserSignUpModel {
   @override
   final String passwordConfirm;
   @override
+  final String fileName;
+  @override
   final dynamic required;
 
   @override
   String toString() {
-    return 'UserSignUpModel(email: $email, fullName: $fullName, emailVisibility: $emailVisibility, password: $password, passwordConfirm: $passwordConfirm, required: $required)';
+    return 'UserSignUpModel(email: $email, fullName: $fullName, emailVisibility: $emailVisibility, password: $password, passwordConfirm: $passwordConfirm, fileName: $fileName, required: $required)';
   }
 
   @override
@@ -533,13 +569,22 @@ class _$UserSignUpModelImpl implements _UserSignUpModel {
                 other.password == password) &&
             (identical(other.passwordConfirm, passwordConfirm) ||
                 other.passwordConfirm == passwordConfirm) &&
+            (identical(other.fileName, fileName) ||
+                other.fileName == fileName) &&
             const DeepCollectionEquality().equals(other.required, required));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, email, fullName, emailVisibility,
-      password, passwordConfirm, const DeepCollectionEquality().hash(required));
+  int get hashCode => Object.hash(
+      runtimeType,
+      email,
+      fullName,
+      emailVisibility,
+      password,
+      passwordConfirm,
+      fileName,
+      const DeepCollectionEquality().hash(required));
 
   @JsonKey(ignore: true)
   @override
@@ -563,6 +608,7 @@ abstract class _UserSignUpModel implements UserSignUpModel {
       final bool emailVisibility,
       required final String password,
       required final String passwordConfirm,
+      required final String fileName,
       final dynamic required}) = _$UserSignUpModelImpl;
 
   factory _UserSignUpModel.fromJson(Map<String, dynamic> json) =
@@ -578,6 +624,8 @@ abstract class _UserSignUpModel implements UserSignUpModel {
   String get password;
   @override
   String get passwordConfirm;
+  @override
+  String get fileName;
   @override
   dynamic get required;
   @override

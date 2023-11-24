@@ -10,6 +10,7 @@ class UserModel with _$UserModel {
     required String id,
     required String fullName,
     required String email,
+    required String avatar,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
@@ -39,6 +40,7 @@ class UserSignUpModel with _$UserSignUpModel {
       @Default(true) bool emailVisibility,
       required String password,
       required String passwordConfirm,
+      required String fileName,
       required}) = _UserSignUpModel;
 
   factory UserSignUpModel.fromJson(Map<String, dynamic> json) =>

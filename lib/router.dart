@@ -12,7 +12,7 @@ final _shellNavigatorChat = GlobalKey<NavigatorState>();
 final _shellNavigatorCall = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
-  initialLocation: "/onBoard/signUp",
+  initialLocation: "/",
   debugLogDiagnostics: true,
   navigatorKey: _rootNavigator,
   routes: [

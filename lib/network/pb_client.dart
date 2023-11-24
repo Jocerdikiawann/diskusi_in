@@ -7,7 +7,7 @@ import 'package:pocketbase/pocketbase.dart';
 class PbClient {
   PbClient({
     PocketBase? pb,
-    this.baseUrl = "http://192.168.0.110:8090",
+    this.baseUrl = "http://192.168.0.101:8090",
   }) : pb = pb ?? PocketBase(baseUrl);
 
   final String baseUrl;
@@ -15,7 +15,12 @@ class PbClient {
 
   Future<ResultNetwork<UserModel>> signUp(UserSignUpModel body) async {
     try {
-      final userData = await pb.collection("users").create(body: body.toJson());
+      final userData = await pb.collection("users").create(
+        body: body.toJson(),
+        files: [
+          //http.MultipartFile.fromPath(field, filePath)
+        ],
+      );
       return ResultNetwork.success(UserModel.fromRecord(userData));
     } on ClientException catch (error) {
       return ResultNetwork.failed(

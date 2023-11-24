@@ -1,1 +1,7 @@
-enum ErrorType { notFound, internal }
+enum ErrorType {
+  unknown,
+  notFound,
+  internal,
+  permissionDenied,
+  ok,
+}

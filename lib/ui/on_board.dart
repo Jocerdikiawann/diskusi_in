@@ -1,7 +1,8 @@
+import 'package:diskusi_in/bloc/on_board_bloc.dart';
 import 'package:diskusi_in/ui/component/button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 
 class OnBoard extends StatefulWidget {
   const OnBoard({super.key});
@@ -26,7 +27,6 @@ class _OnBoardState extends State<OnBoard> {
           style: Theme.of(context).appBarTheme.titleTextStyle,
         ),
       ),
-      //I want wrap content in bottom navigation bar
       bottomNavigationBar: SafeArea(
         child: BottomAppBar(
           elevation: 0,
@@ -37,7 +37,9 @@ class _OnBoardState extends State<OnBoard> {
               Flexible(
                 child: CButton(
                   isFilled: true,
-                  onPressed: () => context.goNamed("signUp"),
+                  onPressed: () => context
+                      .read<OnBoardBloc>()
+                      .add(OnBoardEvent.gotoSignUp(context)),
                   text: "Get Started",
                 ),
               ),
@@ -45,7 +47,9 @@ class _OnBoardState extends State<OnBoard> {
               Flexible(
                 child: CButton(
                   isFilled: false,
-                  onPressed: () => context.goNamed("signIn"),
+                  onPressed: () => context
+                      .read<OnBoardBloc>()
+                      .add(OnBoardEvent.gotoSignIn(context)),
                   text: "Sign In",
                 ),
               ),

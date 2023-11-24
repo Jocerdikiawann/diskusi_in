@@ -24,8 +24,6 @@ mixin _$AuthenticationEvent {
         signUp,
     required TResult Function() signOut,
     required TResult Function() checkAuth,
-    required TResult Function(String email) emailChanged,
-    required TResult Function(String password) passwordChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,8 +34,6 @@ mixin _$AuthenticationEvent {
         signUp,
     TResult? Function()? signOut,
     TResult? Function()? checkAuth,
-    TResult? Function(String email)? emailChanged,
-    TResult? Function(String password)? passwordChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,8 +44,6 @@ mixin _$AuthenticationEvent {
         signUp,
     TResult Function()? signOut,
     TResult Function()? checkAuth,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,8 +53,6 @@ mixin _$AuthenticationEvent {
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignOut value) signOut,
     required TResult Function(_CheckAuth value) checkAuth,
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,8 +61,6 @@ mixin _$AuthenticationEvent {
     TResult? Function(_SignUp value)? signUp,
     TResult? Function(_SignOut value)? signOut,
     TResult? Function(_CheckAuth value)? checkAuth,
-    TResult? Function(_EmailChanged value)? emailChanged,
-    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,8 +69,6 @@ mixin _$AuthenticationEvent {
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignOut value)? signOut,
     TResult Function(_CheckAuth value)? checkAuth,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -183,8 +171,6 @@ class _$SignInImpl implements _SignIn {
         signUp,
     required TResult Function() signOut,
     required TResult Function() checkAuth,
-    required TResult Function(String email) emailChanged,
-    required TResult Function(String password) passwordChanged,
   }) {
     return signIn(email, password);
   }
@@ -198,8 +184,6 @@ class _$SignInImpl implements _SignIn {
         signUp,
     TResult? Function()? signOut,
     TResult? Function()? checkAuth,
-    TResult? Function(String email)? emailChanged,
-    TResult? Function(String password)? passwordChanged,
   }) {
     return signIn?.call(email, password);
   }
@@ -213,8 +197,6 @@ class _$SignInImpl implements _SignIn {
         signUp,
     TResult Function()? signOut,
     TResult Function()? checkAuth,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
     required TResult orElse(),
   }) {
     if (signIn != null) {
@@ -230,8 +212,6 @@ class _$SignInImpl implements _SignIn {
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignOut value) signOut,
     required TResult Function(_CheckAuth value) checkAuth,
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return signIn(this);
   }
@@ -243,8 +223,6 @@ class _$SignInImpl implements _SignIn {
     TResult? Function(_SignUp value)? signUp,
     TResult? Function(_SignOut value)? signOut,
     TResult? Function(_CheckAuth value)? checkAuth,
-    TResult? Function(_EmailChanged value)? emailChanged,
-    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return signIn?.call(this);
   }
@@ -256,8 +234,6 @@ class _$SignInImpl implements _SignIn {
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignOut value)? signOut,
     TResult Function(_CheckAuth value)? checkAuth,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (signIn != null) {
@@ -378,8 +354,6 @@ class _$SignUpImpl implements _SignUp {
         signUp,
     required TResult Function() signOut,
     required TResult Function() checkAuth,
-    required TResult Function(String email) emailChanged,
-    required TResult Function(String password) passwordChanged,
   }) {
     return signUp(fullName, email, password, passwordConfirm);
   }
@@ -393,8 +367,6 @@ class _$SignUpImpl implements _SignUp {
         signUp,
     TResult? Function()? signOut,
     TResult? Function()? checkAuth,
-    TResult? Function(String email)? emailChanged,
-    TResult? Function(String password)? passwordChanged,
   }) {
     return signUp?.call(fullName, email, password, passwordConfirm);
   }
@@ -408,8 +380,6 @@ class _$SignUpImpl implements _SignUp {
         signUp,
     TResult Function()? signOut,
     TResult Function()? checkAuth,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -425,8 +395,6 @@ class _$SignUpImpl implements _SignUp {
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignOut value) signOut,
     required TResult Function(_CheckAuth value) checkAuth,
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return signUp(this);
   }
@@ -438,8 +406,6 @@ class _$SignUpImpl implements _SignUp {
     TResult? Function(_SignUp value)? signUp,
     TResult? Function(_SignOut value)? signOut,
     TResult? Function(_CheckAuth value)? checkAuth,
-    TResult? Function(_EmailChanged value)? emailChanged,
-    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return signUp?.call(this);
   }
@@ -451,8 +417,6 @@ class _$SignUpImpl implements _SignUp {
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignOut value)? signOut,
     TResult Function(_CheckAuth value)? checkAuth,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -519,8 +483,6 @@ class _$SignOutImpl implements _SignOut {
         signUp,
     required TResult Function() signOut,
     required TResult Function() checkAuth,
-    required TResult Function(String email) emailChanged,
-    required TResult Function(String password) passwordChanged,
   }) {
     return signOut();
   }
@@ -534,8 +496,6 @@ class _$SignOutImpl implements _SignOut {
         signUp,
     TResult? Function()? signOut,
     TResult? Function()? checkAuth,
-    TResult? Function(String email)? emailChanged,
-    TResult? Function(String password)? passwordChanged,
   }) {
     return signOut?.call();
   }
@@ -549,8 +509,6 @@ class _$SignOutImpl implements _SignOut {
         signUp,
     TResult Function()? signOut,
     TResult Function()? checkAuth,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -566,8 +524,6 @@ class _$SignOutImpl implements _SignOut {
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignOut value) signOut,
     required TResult Function(_CheckAuth value) checkAuth,
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return signOut(this);
   }
@@ -579,8 +535,6 @@ class _$SignOutImpl implements _SignOut {
     TResult? Function(_SignUp value)? signUp,
     TResult? Function(_SignOut value)? signOut,
     TResult? Function(_CheckAuth value)? checkAuth,
-    TResult? Function(_EmailChanged value)? emailChanged,
-    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return signOut?.call(this);
   }
@@ -592,8 +546,6 @@ class _$SignOutImpl implements _SignOut {
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignOut value)? signOut,
     TResult Function(_CheckAuth value)? checkAuth,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -651,8 +603,6 @@ class _$CheckAuthImpl implements _CheckAuth {
         signUp,
     required TResult Function() signOut,
     required TResult Function() checkAuth,
-    required TResult Function(String email) emailChanged,
-    required TResult Function(String password) passwordChanged,
   }) {
     return checkAuth();
   }
@@ -666,8 +616,6 @@ class _$CheckAuthImpl implements _CheckAuth {
         signUp,
     TResult? Function()? signOut,
     TResult? Function()? checkAuth,
-    TResult? Function(String email)? emailChanged,
-    TResult? Function(String password)? passwordChanged,
   }) {
     return checkAuth?.call();
   }
@@ -681,8 +629,6 @@ class _$CheckAuthImpl implements _CheckAuth {
         signUp,
     TResult Function()? signOut,
     TResult Function()? checkAuth,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
     required TResult orElse(),
   }) {
     if (checkAuth != null) {
@@ -698,8 +644,6 @@ class _$CheckAuthImpl implements _CheckAuth {
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignOut value) signOut,
     required TResult Function(_CheckAuth value) checkAuth,
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return checkAuth(this);
   }
@@ -711,8 +655,6 @@ class _$CheckAuthImpl implements _CheckAuth {
     TResult? Function(_SignUp value)? signUp,
     TResult? Function(_SignOut value)? signOut,
     TResult? Function(_CheckAuth value)? checkAuth,
-    TResult? Function(_EmailChanged value)? emailChanged,
-    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return checkAuth?.call(this);
   }
@@ -724,8 +666,6 @@ class _$CheckAuthImpl implements _CheckAuth {
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignOut value)? signOut,
     TResult Function(_CheckAuth value)? checkAuth,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (checkAuth != null) {
@@ -740,334 +680,6 @@ abstract class _CheckAuth implements AuthenticationEvent {
 }
 
 /// @nodoc
-abstract class _$$EmailChangedImplCopyWith<$Res> {
-  factory _$$EmailChangedImplCopyWith(
-          _$EmailChangedImpl value, $Res Function(_$EmailChangedImpl) then) =
-      __$$EmailChangedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String email});
-}
-
-/// @nodoc
-class __$$EmailChangedImplCopyWithImpl<$Res>
-    extends _$AuthenticationEventCopyWithImpl<$Res, _$EmailChangedImpl>
-    implements _$$EmailChangedImplCopyWith<$Res> {
-  __$$EmailChangedImplCopyWithImpl(
-      _$EmailChangedImpl _value, $Res Function(_$EmailChangedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = null,
-  }) {
-    return _then(_$EmailChangedImpl(
-      null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$EmailChangedImpl implements _EmailChanged {
-  const _$EmailChangedImpl(this.email);
-
-  @override
-  final String email;
-
-  @override
-  String toString() {
-    return 'AuthenticationEvent.emailChanged(email: $email)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EmailChangedImpl &&
-            (identical(other.email, email) || other.email == email));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, email);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
-      __$$EmailChangedImplCopyWithImpl<_$EmailChangedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password) signIn,
-    required TResult Function(String fullName, String email, String password,
-            String passwordConfirm)
-        signUp,
-    required TResult Function() signOut,
-    required TResult Function() checkAuth,
-    required TResult Function(String email) emailChanged,
-    required TResult Function(String password) passwordChanged,
-  }) {
-    return emailChanged(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)? signIn,
-    TResult? Function(String fullName, String email, String password,
-            String passwordConfirm)?
-        signUp,
-    TResult? Function()? signOut,
-    TResult? Function()? checkAuth,
-    TResult? Function(String email)? emailChanged,
-    TResult? Function(String password)? passwordChanged,
-  }) {
-    return emailChanged?.call(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? signIn,
-    TResult Function(String fullName, String email, String password,
-            String passwordConfirm)?
-        signUp,
-    TResult Function()? signOut,
-    TResult Function()? checkAuth,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    required TResult orElse(),
-  }) {
-    if (emailChanged != null) {
-      return emailChanged(email);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignIn value) signIn,
-    required TResult Function(_SignUp value) signUp,
-    required TResult Function(_SignOut value) signOut,
-    required TResult Function(_CheckAuth value) checkAuth,
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
-  }) {
-    return emailChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SignIn value)? signIn,
-    TResult? Function(_SignUp value)? signUp,
-    TResult? Function(_SignOut value)? signOut,
-    TResult? Function(_CheckAuth value)? checkAuth,
-    TResult? Function(_EmailChanged value)? emailChanged,
-    TResult? Function(_PasswordChanged value)? passwordChanged,
-  }) {
-    return emailChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignIn value)? signIn,
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignOut value)? signOut,
-    TResult Function(_CheckAuth value)? checkAuth,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    required TResult orElse(),
-  }) {
-    if (emailChanged != null) {
-      return emailChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _EmailChanged implements AuthenticationEvent {
-  const factory _EmailChanged(final String email) = _$EmailChangedImpl;
-
-  String get email;
-  @JsonKey(ignore: true)
-  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PasswordChangedImplCopyWith<$Res> {
-  factory _$$PasswordChangedImplCopyWith(_$PasswordChangedImpl value,
-          $Res Function(_$PasswordChangedImpl) then) =
-      __$$PasswordChangedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String password});
-}
-
-/// @nodoc
-class __$$PasswordChangedImplCopyWithImpl<$Res>
-    extends _$AuthenticationEventCopyWithImpl<$Res, _$PasswordChangedImpl>
-    implements _$$PasswordChangedImplCopyWith<$Res> {
-  __$$PasswordChangedImplCopyWithImpl(
-      _$PasswordChangedImpl _value, $Res Function(_$PasswordChangedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? password = null,
-  }) {
-    return _then(_$PasswordChangedImpl(
-      null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PasswordChangedImpl implements _PasswordChanged {
-  const _$PasswordChangedImpl(this.password);
-
-  @override
-  final String password;
-
-  @override
-  String toString() {
-    return 'AuthenticationEvent.passwordChanged(password: $password)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PasswordChangedImpl &&
-            (identical(other.password, password) ||
-                other.password == password));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, password);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
-      __$$PasswordChangedImplCopyWithImpl<_$PasswordChangedImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password) signIn,
-    required TResult Function(String fullName, String email, String password,
-            String passwordConfirm)
-        signUp,
-    required TResult Function() signOut,
-    required TResult Function() checkAuth,
-    required TResult Function(String email) emailChanged,
-    required TResult Function(String password) passwordChanged,
-  }) {
-    return passwordChanged(password);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)? signIn,
-    TResult? Function(String fullName, String email, String password,
-            String passwordConfirm)?
-        signUp,
-    TResult? Function()? signOut,
-    TResult? Function()? checkAuth,
-    TResult? Function(String email)? emailChanged,
-    TResult? Function(String password)? passwordChanged,
-  }) {
-    return passwordChanged?.call(password);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? signIn,
-    TResult Function(String fullName, String email, String password,
-            String passwordConfirm)?
-        signUp,
-    TResult Function()? signOut,
-    TResult Function()? checkAuth,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    required TResult orElse(),
-  }) {
-    if (passwordChanged != null) {
-      return passwordChanged(password);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignIn value) signIn,
-    required TResult Function(_SignUp value) signUp,
-    required TResult Function(_SignOut value) signOut,
-    required TResult Function(_CheckAuth value) checkAuth,
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
-  }) {
-    return passwordChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SignIn value)? signIn,
-    TResult? Function(_SignUp value)? signUp,
-    TResult? Function(_SignOut value)? signOut,
-    TResult? Function(_CheckAuth value)? checkAuth,
-    TResult? Function(_EmailChanged value)? emailChanged,
-    TResult? Function(_PasswordChanged value)? passwordChanged,
-  }) {
-    return passwordChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignIn value)? signIn,
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignOut value)? signOut,
-    TResult Function(_CheckAuth value)? checkAuth,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    required TResult orElse(),
-  }) {
-    if (passwordChanged != null) {
-      return passwordChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PasswordChanged implements AuthenticationEvent {
-  const factory _PasswordChanged(final String password) = _$PasswordChangedImpl;
-
-  String get password;
-  @JsonKey(ignore: true)
-  _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$AuthenticationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -1075,7 +687,6 @@ mixin _$AuthenticationState {
     required TResult Function() loading,
     required TResult Function(String msg) failed,
     required TResult Function(UserModel data) success,
-    required TResult Function(String? msg) fieldChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1084,7 +695,6 @@ mixin _$AuthenticationState {
     TResult? Function()? loading,
     TResult? Function(String msg)? failed,
     TResult? Function(UserModel data)? success,
-    TResult? Function(String? msg)? fieldChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1093,35 +703,31 @@ mixin _$AuthenticationState {
     TResult Function()? loading,
     TResult Function(String msg)? failed,
     TResult Function(UserModel data)? success,
-    TResult Function(String? msg)? fieldChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Failed value) failed,
-    required TResult Function(Success value) success,
-    required TResult Function(FieldChanged value) fieldChanged,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Failed value) failed,
+    required TResult Function(_Success value) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Failed value)? failed,
-    TResult? Function(Success value)? success,
-    TResult? Function(FieldChanged value)? fieldChanged,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Failed value)? failed,
+    TResult? Function(_Success value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Failed value)? failed,
-    TResult Function(Success value)? success,
-    TResult Function(FieldChanged value)? fieldChanged,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Failed value)? failed,
+    TResult Function(_Success value)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1163,7 +769,7 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements Initial {
+class _$InitialImpl implements _Initial {
   const _$InitialImpl();
 
   @override
@@ -1187,7 +793,6 @@ class _$InitialImpl implements Initial {
     required TResult Function() loading,
     required TResult Function(String msg) failed,
     required TResult Function(UserModel data) success,
-    required TResult Function(String? msg) fieldChanged,
   }) {
     return initial();
   }
@@ -1199,7 +804,6 @@ class _$InitialImpl implements Initial {
     TResult? Function()? loading,
     TResult? Function(String msg)? failed,
     TResult? Function(UserModel data)? success,
-    TResult? Function(String? msg)? fieldChanged,
   }) {
     return initial?.call();
   }
@@ -1211,7 +815,6 @@ class _$InitialImpl implements Initial {
     TResult Function()? loading,
     TResult Function(String msg)? failed,
     TResult Function(UserModel data)? success,
-    TResult Function(String? msg)? fieldChanged,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1223,11 +826,10 @@ class _$InitialImpl implements Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Failed value) failed,
-    required TResult Function(Success value) success,
-    required TResult Function(FieldChanged value) fieldChanged,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Failed value) failed,
+    required TResult Function(_Success value) success,
   }) {
     return initial(this);
   }
@@ -1235,11 +837,10 @@ class _$InitialImpl implements Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Failed value)? failed,
-    TResult? Function(Success value)? success,
-    TResult? Function(FieldChanged value)? fieldChanged,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Failed value)? failed,
+    TResult? Function(_Success value)? success,
   }) {
     return initial?.call(this);
   }
@@ -1247,11 +848,10 @@ class _$InitialImpl implements Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Failed value)? failed,
-    TResult Function(Success value)? success,
-    TResult Function(FieldChanged value)? fieldChanged,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Failed value)? failed,
+    TResult Function(_Success value)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1261,8 +861,8 @@ class _$InitialImpl implements Initial {
   }
 }
 
-abstract class Initial implements AuthenticationState {
-  const factory Initial() = _$InitialImpl;
+abstract class _Initial implements AuthenticationState {
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
@@ -1283,7 +883,7 @@ class __$$LoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingImpl implements Loading {
+class _$LoadingImpl implements _Loading {
   const _$LoadingImpl();
 
   @override
@@ -1307,7 +907,6 @@ class _$LoadingImpl implements Loading {
     required TResult Function() loading,
     required TResult Function(String msg) failed,
     required TResult Function(UserModel data) success,
-    required TResult Function(String? msg) fieldChanged,
   }) {
     return loading();
   }
@@ -1319,7 +918,6 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? loading,
     TResult? Function(String msg)? failed,
     TResult? Function(UserModel data)? success,
-    TResult? Function(String? msg)? fieldChanged,
   }) {
     return loading?.call();
   }
@@ -1331,7 +929,6 @@ class _$LoadingImpl implements Loading {
     TResult Function()? loading,
     TResult Function(String msg)? failed,
     TResult Function(UserModel data)? success,
-    TResult Function(String? msg)? fieldChanged,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1343,11 +940,10 @@ class _$LoadingImpl implements Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Failed value) failed,
-    required TResult Function(Success value) success,
-    required TResult Function(FieldChanged value) fieldChanged,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Failed value) failed,
+    required TResult Function(_Success value) success,
   }) {
     return loading(this);
   }
@@ -1355,11 +951,10 @@ class _$LoadingImpl implements Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Failed value)? failed,
-    TResult? Function(Success value)? success,
-    TResult? Function(FieldChanged value)? fieldChanged,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Failed value)? failed,
+    TResult? Function(_Success value)? success,
   }) {
     return loading?.call(this);
   }
@@ -1367,11 +962,10 @@ class _$LoadingImpl implements Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Failed value)? failed,
-    TResult Function(Success value)? success,
-    TResult Function(FieldChanged value)? fieldChanged,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Failed value)? failed,
+    TResult Function(_Success value)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1381,8 +975,8 @@ class _$LoadingImpl implements Loading {
   }
 }
 
-abstract class Loading implements AuthenticationState {
-  const factory Loading() = _$LoadingImpl;
+abstract class _Loading implements AuthenticationState {
+  const factory _Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
@@ -1418,7 +1012,7 @@ class __$$FailedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FailedImpl implements Failed {
+class _$FailedImpl implements _Failed {
   const _$FailedImpl(this.msg);
 
   @override
@@ -1453,7 +1047,6 @@ class _$FailedImpl implements Failed {
     required TResult Function() loading,
     required TResult Function(String msg) failed,
     required TResult Function(UserModel data) success,
-    required TResult Function(String? msg) fieldChanged,
   }) {
     return failed(msg);
   }
@@ -1465,7 +1058,6 @@ class _$FailedImpl implements Failed {
     TResult? Function()? loading,
     TResult? Function(String msg)? failed,
     TResult? Function(UserModel data)? success,
-    TResult? Function(String? msg)? fieldChanged,
   }) {
     return failed?.call(msg);
   }
@@ -1477,7 +1069,6 @@ class _$FailedImpl implements Failed {
     TResult Function()? loading,
     TResult Function(String msg)? failed,
     TResult Function(UserModel data)? success,
-    TResult Function(String? msg)? fieldChanged,
     required TResult orElse(),
   }) {
     if (failed != null) {
@@ -1489,11 +1080,10 @@ class _$FailedImpl implements Failed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Failed value) failed,
-    required TResult Function(Success value) success,
-    required TResult Function(FieldChanged value) fieldChanged,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Failed value) failed,
+    required TResult Function(_Success value) success,
   }) {
     return failed(this);
   }
@@ -1501,11 +1091,10 @@ class _$FailedImpl implements Failed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Failed value)? failed,
-    TResult? Function(Success value)? success,
-    TResult? Function(FieldChanged value)? fieldChanged,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Failed value)? failed,
+    TResult? Function(_Success value)? success,
   }) {
     return failed?.call(this);
   }
@@ -1513,11 +1102,10 @@ class _$FailedImpl implements Failed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Failed value)? failed,
-    TResult Function(Success value)? success,
-    TResult Function(FieldChanged value)? fieldChanged,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Failed value)? failed,
+    TResult Function(_Success value)? success,
     required TResult orElse(),
   }) {
     if (failed != null) {
@@ -1527,8 +1115,8 @@ class _$FailedImpl implements Failed {
   }
 }
 
-abstract class Failed implements AuthenticationState {
-  const factory Failed(final String msg) = _$FailedImpl;
+abstract class _Failed implements AuthenticationState {
+  const factory _Failed(final String msg) = _$FailedImpl;
 
   String get msg;
   @JsonKey(ignore: true)
@@ -1579,7 +1167,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SuccessImpl implements Success {
+class _$SuccessImpl implements _Success {
   const _$SuccessImpl(this.data);
 
   @override
@@ -1614,7 +1202,6 @@ class _$SuccessImpl implements Success {
     required TResult Function() loading,
     required TResult Function(String msg) failed,
     required TResult Function(UserModel data) success,
-    required TResult Function(String? msg) fieldChanged,
   }) {
     return success(data);
   }
@@ -1626,7 +1213,6 @@ class _$SuccessImpl implements Success {
     TResult? Function()? loading,
     TResult? Function(String msg)? failed,
     TResult? Function(UserModel data)? success,
-    TResult? Function(String? msg)? fieldChanged,
   }) {
     return success?.call(data);
   }
@@ -1638,7 +1224,6 @@ class _$SuccessImpl implements Success {
     TResult Function()? loading,
     TResult Function(String msg)? failed,
     TResult Function(UserModel data)? success,
-    TResult Function(String? msg)? fieldChanged,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -1650,11 +1235,10 @@ class _$SuccessImpl implements Success {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Failed value) failed,
-    required TResult Function(Success value) success,
-    required TResult Function(FieldChanged value) fieldChanged,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Failed value) failed,
+    required TResult Function(_Success value) success,
   }) {
     return success(this);
   }
@@ -1662,11 +1246,10 @@ class _$SuccessImpl implements Success {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Failed value)? failed,
-    TResult? Function(Success value)? success,
-    TResult? Function(FieldChanged value)? fieldChanged,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Failed value)? failed,
+    TResult? Function(_Success value)? success,
   }) {
     return success?.call(this);
   }
@@ -1674,11 +1257,10 @@ class _$SuccessImpl implements Success {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Failed value)? failed,
-    TResult Function(Success value)? success,
-    TResult Function(FieldChanged value)? fieldChanged,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Failed value)? failed,
+    TResult Function(_Success value)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -1688,162 +1270,11 @@ class _$SuccessImpl implements Success {
   }
 }
 
-abstract class Success implements AuthenticationState {
-  const factory Success(final UserModel data) = _$SuccessImpl;
+abstract class _Success implements AuthenticationState {
+  const factory _Success(final UserModel data) = _$SuccessImpl;
 
   UserModel get data;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$FieldChangedImplCopyWith<$Res> {
-  factory _$$FieldChangedImplCopyWith(
-          _$FieldChangedImpl value, $Res Function(_$FieldChangedImpl) then) =
-      __$$FieldChangedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String? msg});
-}
-
-/// @nodoc
-class __$$FieldChangedImplCopyWithImpl<$Res>
-    extends _$AuthenticationStateCopyWithImpl<$Res, _$FieldChangedImpl>
-    implements _$$FieldChangedImplCopyWith<$Res> {
-  __$$FieldChangedImplCopyWithImpl(
-      _$FieldChangedImpl _value, $Res Function(_$FieldChangedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? msg = freezed,
-  }) {
-    return _then(_$FieldChangedImpl(
-      freezed == msg
-          ? _value.msg
-          : msg // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$FieldChangedImpl implements FieldChanged {
-  const _$FieldChangedImpl(this.msg);
-
-  @override
-  final String? msg;
-
-  @override
-  String toString() {
-    return 'AuthenticationState.fieldChanged(msg: $msg)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FieldChangedImpl &&
-            (identical(other.msg, msg) || other.msg == msg));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, msg);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FieldChangedImplCopyWith<_$FieldChangedImpl> get copyWith =>
-      __$$FieldChangedImplCopyWithImpl<_$FieldChangedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String msg) failed,
-    required TResult Function(UserModel data) success,
-    required TResult Function(String? msg) fieldChanged,
-  }) {
-    return fieldChanged(msg);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String msg)? failed,
-    TResult? Function(UserModel data)? success,
-    TResult? Function(String? msg)? fieldChanged,
-  }) {
-    return fieldChanged?.call(msg);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String msg)? failed,
-    TResult Function(UserModel data)? success,
-    TResult Function(String? msg)? fieldChanged,
-    required TResult orElse(),
-  }) {
-    if (fieldChanged != null) {
-      return fieldChanged(msg);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Failed value) failed,
-    required TResult Function(Success value) success,
-    required TResult Function(FieldChanged value) fieldChanged,
-  }) {
-    return fieldChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Failed value)? failed,
-    TResult? Function(Success value)? success,
-    TResult? Function(FieldChanged value)? fieldChanged,
-  }) {
-    return fieldChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Failed value)? failed,
-    TResult Function(Success value)? success,
-    TResult Function(FieldChanged value)? fieldChanged,
-    required TResult orElse(),
-  }) {
-    if (fieldChanged != null) {
-      return fieldChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class FieldChanged implements AuthenticationState {
-  const factory FieldChanged(final String? msg) = _$FieldChangedImpl;
-
-  String? get msg;
-  @JsonKey(ignore: true)
-  _$$FieldChangedImplCopyWith<_$FieldChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

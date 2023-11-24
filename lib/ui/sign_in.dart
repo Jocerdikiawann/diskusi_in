@@ -26,8 +26,7 @@ class _SignInState extends State<SignIn> {
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listener: (context, state) {
         state.when(
-          initial: () => {},
-          fieldChanged: (_) => {},
+          initial: (){},
           loading: () => loading = true,
           failed: (String message) => context.errorSnackbar(message),
           success: (UserModel data) => context.goNamed("chat"),
