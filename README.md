@@ -1,4 +1,4 @@
-# Description (ENG)
+# Description
 Diskusiin is a group communication application built using Flutter and Pocketbase. This application is designed to facilitate discussions and collaborations within groups by providing group chat and group call features.
 # Key Feature
 - Group Chat: Diskusiin allows users to communicate in group chats. Users can share text messages, images, and other files with other group members.
@@ -12,7 +12,7 @@ Pocketbase is used as the backend of the application. It is a backend-as-a-servi
 
 For the group call feature, Diskusiin uses Agora, a real-time communication platform that provides SDKs for developing applications with voice and video call features.
 
-# Description (ID)
+# Description (IDN)
 Diskusiin adalah aplikasi komunikasi grup yang dibuat menggunakan Flutter dan Pocketbase. Aplikasi ini dirancang untuk memfasilitasi diskusi dan kolaborasi dalam grup dengan menyediakan fitur chat grup dan panggilan grup.
 
 # Fitur Utama
