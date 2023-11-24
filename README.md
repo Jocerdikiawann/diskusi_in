@@ -1,3 +1,5 @@
+<img src="https://github.com/Jocerdikiawann/diskusi_in/assets/63967769/48ed32cb-d1b2-4352-ad23-32e62489ee28" alt="drawing" width="200"/>
+
 # Description
 Diskusiin is a group communication application built using Flutter and Pocketbase. This application is designed to facilitate discussions and collaborations within groups by providing group chat and group call features.
 # Key Feature
